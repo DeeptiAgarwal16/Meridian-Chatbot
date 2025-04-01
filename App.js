@@ -4,10 +4,11 @@ import { FaCog, FaDatabase, FaChartBar, FaUser, FaSignOutAlt } from "react-icons
 import Dashboard from "./components/Dashboard";
 import KnowledgeBase from "./components/KnowledgeBase";
 import Settings from "./components/Settings";
-import "./App.css";
-import Meridianlogoblue from "./Meridian-logo-blue.png";
 import RecentActivity from "./components/RecentActivity";
-// C:\Users\Admin\Documents\reridian-chatbot-frontend-final\frontend-admin\Meridian-logo-blue.png
+import UsersPage from "./components/UsersPage";
+import Meridianlogoblue from "./Meridian-logo-blue.png";
+import "./App.css";
+
 // Sidebar Component
 const Sidebar = () => {
   const user = {
@@ -18,34 +19,33 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      
       <div className="sidebar-header">
-      {/* <div> */}
         <img src={Meridianlogoblue} alt="Logo" width="100" height="100" />
-      {/* </div> */}
-        {/* <img src={Meridianlogoblue} alt = "Logo" width="100" height="100" /> */}
         <h1 className="app-title">AI Chatbot</h1> 
         <p className="app-subtitle">Admin Panel</p>
       </div>
       
       <nav className="nav-links">
-        <NavLink to="/" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>
+        <NavLink to="/" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
           <FaChartBar className="nav-icon" /> 
           <span>Dashboard</span>
         </NavLink>
-        <NavLink to="/knowledge" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>
+        <NavLink to="/knowledge" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
           <FaDatabase className="nav-icon" /> 
           <span>Knowledge Base</span>
         </NavLink>
-        <NavLink to="/settings" className={({isActive}) => isActive ? "nav-item active" : "nav-item"}>
+        <NavLink to="/settings" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
           <FaCog className="nav-icon" /> 
           <span>Settings</span>
         </NavLink>
-        <NavLink to="/recentActivity" className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}>
+        <NavLink to="/recentActivity" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
           <FaUser className="nav-icon" /> 
           <span>Recent Activity</span>
         </NavLink>
-
+        <NavLink to="/userPage" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>
+          <FaUser className="nav-icon" /> 
+          <span>User Page</span>
+        </NavLink>
       </nav>
       
       <div className="user-profile">
@@ -69,9 +69,6 @@ const App = () => {
   const [fileCount, setFileCount] = useState(0);
   const [folderCount, setFolderCount] = useState(0);
 
-
- 
-
   return (
     <Router>
       <div className="app-container">
@@ -82,6 +79,7 @@ const App = () => {
             <Route path="/knowledge" element={<KnowledgeBase setFileCount={setFileCount} />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/recentActivity" element={<RecentActivity />} />
+            <Route path="/userPage" element={<UsersPage />} />
           </Routes>
         </div>
       </div>
