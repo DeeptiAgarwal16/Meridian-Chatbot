@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const url = "https://meridian-chabot-dashboard.onrender.com";
+const url = "https://meridian-backend-postdeployment-testing.onrender.com";
 
 const RecentActivity = () => {
   const [queries, setQueries] = useState([]);

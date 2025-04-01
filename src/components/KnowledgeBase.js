@@ -271,7 +271,7 @@ import { Tooltip } from 'react-tooltip';
 import { ClipLoader } from 'react-spinners';
 
 // Base URL for API endpoints
-const baseUrl = "https://meridian-chabot-dashboard.onrender.com";
+const baseUrl = "https://meridian-backend-postdeployment-testing.onrender.com";
 
 const KnowledgeBasePage = () => {
   const [files, setFiles] = useState([]);
