@@ -399,7 +399,7 @@ const Dashboard = () => {
       })
       .then(data => {
         // Sort by ID in descending order to get the most recent ones
-        const sortedData = data.sort((a, b) => (b.id || 0) - (a.id || 0));
+        const sortedData = data.sort().reverse();
         // Take only the first 3 (most recent)
         const recentQueries = sortedData.slice(0, 3).map(query => ({
           id: query.id,

@@ -16,7 +16,8 @@ const RecentActivity = () => {
         return response.json();
       })
       .then(data => {
-        const sortedData = data.sort((a, b) => (b.id || 0) - (a.id || 0));
+        // console.log(data);
+        const sortedData = data.sort().reverse();
         setQueries(sortedData);
         setLoading(false);
       })
